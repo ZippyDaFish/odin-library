@@ -5,23 +5,44 @@
 }
 body {
     background-color: rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pad-top {
+    padding-top: 5vh;
+}
+.text-main {
+    color: black;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .header {
     background-color: white;
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
+    padding: 5vh;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    gap: 50px;
 }
 
 .book-card {
     background-color: white;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
+    padding: 20px 0px;
+    border-radius: 15px;
+}
+.book-card > button {
+    width: 80%;
 }
