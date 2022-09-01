@@ -1,10 +1,14 @@
+:root {
+    --color-main: rgb(221, 221, 221);
+    --color-hover: rgb(175, 175, 175);
+}
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 body {
-    background-color: rgb(221, 221, 221);
+    background-color: var(--color-main);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,4 +49,9 @@ body {
 }
 .book-card > button {
     width: 80%;
+    border: none;
+    background-color: var(--color-main);
+}
+.book-card > button:hover {
+    background-color: var(--color-hover);
 }
