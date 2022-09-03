@@ -75,3 +75,11 @@ body {
 .book-form input[type=text], .book-form input[type=number] {
     padding: 10px;
 }
+#form-wrap {
+    background-color: rgb(0, 0, 0, 0.3);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+}

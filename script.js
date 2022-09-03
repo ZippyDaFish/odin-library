@@ -34,5 +34,19 @@ myLibrary.forEach(b => createCard(b)); // create a card for each book in the lib
 
 const addBtn = document.getElementById('add-book');
 addBtn.addEventListener('click', function() {
-    document.getElementById('add-form').style.display = 'flex';
+    document.getElementById('form-wrap').style.display = 'flex';
 });
+const formWrap = document.getElementById('form-wrap');
+formWrap.addEventListener('click', function(){
+    const form = document.getElementById('add-form');
+    mouseIsOver = false;
+    form.onmouseover = function() {
+        this.mouseIsOver = true;
+    };
+    form.onmouseout = function() {
+        this.mouseIsOver = false;
+    }
+    if(!form.mouseIsOver) {
+        formWrap.style.display = 'none';
+    }
+})
