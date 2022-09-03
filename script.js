@@ -27,5 +27,12 @@ function createCard(b) {
 
 addBook('Rawr','Meep',700,true);
 addBook('Oof','Schloop',1900,false);
-myLibrary.forEach(b => console.log(b));
-myLibrary.forEach(b => createCard(b));
+myLibrary.forEach(b => console.log(b)); //log books to console
+
+document.getElementById('grid-main').innerHTML = "";
+myLibrary.forEach(b => createCard(b)); // create a card for each book in the library
+
+const addBtn = document.getElementById('add-book');
+addBtn.addEventListener('click', function() {
+    document.getElementById('add-form').style.display = 'flex';
+});

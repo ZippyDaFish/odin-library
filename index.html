@@ -9,7 +9,7 @@
     <title>Library - Andrew Riker</title>
 </head>
 <body>
-    <form action="#" class="book-form">
+    <form action="#" class="book-form" id="add-form" style="display:none">
         <p class="text-main">Add Book</p>
         <input required type="text" id="title" placeholder="Title">
         <input required type="text" id="author" placeholder="Author">
@@ -22,17 +22,10 @@
     </form>
     <div class="header">
         <h1>Library</h1>
-        <button>Add Book</button>
+        <button id="add-book">Add Book</button>
         <button>Log In</button>
     </div>
     <div id="grid-main" class="container pad-top">
-        <div class="book-card text-main">
-            <p>Title</p>
-            <p>Author</p>
-            <p>PageNum</p>
-            <button class="text-main button-main">Read/Unread</button>
-            <button class="text-main button-main">Remove</button>
-        </div>
     </div>
 </body>
 </html>
