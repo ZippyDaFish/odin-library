@@ -11,9 +11,13 @@
 <body>
     <form action="#" class="book-form">
         <p class="text-main">Add Book</p>
-        <input type="text" id="title">
-        <input type="text" id="author">
-        <input type="number" id="page-num">
+        <input required type="text" id="title" placeholder="Title">
+        <input required type="text" id="author" placeholder="Author">
+        <input required type="number" id="page-num" placeholder="Page Number">
+        <div>
+            <label for="read" class="text-second">Have you read this?</label>
+            <input type="checkbox" name="read">
+        </div>
         <button type="submit" class="text-main button-main">Submit</button>
     </form>
     <div class="header">
