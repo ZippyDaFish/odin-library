@@ -47,11 +47,23 @@ body {
     padding: 20px 0px;
     border-radius: 15px;
 }
-.book-card > button {
+.button-main {
     width: 80%;
     border: none;
     background-color: var(--color-main);
 }
-.book-card > button:hover {
+.button-main:hover {
     background-color: var(--color-hover);
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    top: 50vh;
+    border-radius: 15px;
+    gap: 20px;
+    padding: 20px;
 }
