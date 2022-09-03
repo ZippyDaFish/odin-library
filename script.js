@@ -7,6 +7,25 @@ function Book(title, author, pageNum, read){
     this.read = read;
 }
 
-function addBook(){
-    
+function addBook(title, author, pageNum, read){
+    let newBook = new Book(title, author, pageNum, read);
+    myLibrary.push(newBook);
 }
+
+function createCard(b) {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'book-card text-main');
+    div.innerHTML = `
+    <p>${b.title}</p>
+    <p>${b.author}</p>
+    <p>${b.pageNum}</p>
+    <button class='text-main button-main'>Read/Unread</button>
+    <button class='text-main button-main'>Remove</button>
+    `;
+    document.getElementById('grid-main').appendChild(div);
+}
+
+addBook('Rawr','Meep',700,true);
+addBook('Oof','Schloop',1900,false);
+myLibrary.forEach(b => console.log(b));
+myLibrary.forEach(b => createCard(b));
