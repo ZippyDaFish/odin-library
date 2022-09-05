@@ -37,9 +37,11 @@ function createCard(b, remIndex) {
     document.getElementById('grid-main').appendChild(div);
 }
 function removeCard(remIndex){
-    myLibrary.splice(remIndex, 1);
+    removed = myLibrary.splice(remIndex, 1);
+    myLibrary.forEach(b => b.index = b.index-1);
     refreshCards();
     console.log(remIndex);
+    console.log(removed);
 }
 function refreshCards() {
     document.getElementById('grid-main').innerHTML = "";
