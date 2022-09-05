@@ -25,6 +25,16 @@ function createCard(b) {
     document.getElementById('grid-main').appendChild(div);
 }
 
+function showForm(show){
+    if(show){
+        document.getElementById('form-wrap').style.display = 'flex';
+    }
+    else if(!show){
+        document.getElementById('form-wrap').style.display = 'none';
+    }
+    console.log(show);
+}
+
 addBook('Rawr','Meep',700,true);
 addBook('Oof','Schloop',1900,false);
 myLibrary.forEach(b => console.log(b)); //log books to console
@@ -34,9 +44,7 @@ myLibrary.forEach(b => createCard(b)); // create a card for each book in the lib
 
 // event listener for adding a new book
 const addBtn = document.getElementById('add-book');
-addBtn.addEventListener('click', function() {
-    document.getElementById('form-wrap').style.display = 'flex';
-});
+addBtn.addEventListener('click', function(){showForm(true);});
 
 // form open-close toggling
 const formWrap = document.getElementById('form-wrap');
@@ -50,6 +58,6 @@ formWrap.addEventListener('click', function(){
         this.mouseIsOver = false;
     }
     if(!form.mouseIsOver) {
-        formWrap.style.display = 'none';
+        showForm(false);
     }
 })
