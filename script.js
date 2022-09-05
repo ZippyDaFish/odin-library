@@ -37,11 +37,9 @@ function createCard(b, remIndex) {
     document.getElementById('grid-main').appendChild(div);
 }
 function removeCard(remIndex){
-    removed = myLibrary.splice(remIndex, 1);
-    myLibrary.forEach(b => b.index = b.index-1);
+
     refreshCards();
     console.log(remIndex);
-    console.log(removed);
 }
 function refreshCards() {
     document.getElementById('grid-main').innerHTML = "";
@@ -56,3 +54,5 @@ function showForm(show){
 // event listener for adding a new book
 const addBtn = document.getElementById('add-book');
 addBtn.addEventListener('click', function(){showForm(true);});
+const closeBtn = document.getElementById('close-form');
+closeBtn.addEventListener('click', function(){showForm(false);})
