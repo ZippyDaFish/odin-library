@@ -22,6 +22,7 @@ function bookSubmit(){
     if(check.checked == true){ r = "Read";}
     else if(check.check != true){ r = "Unread";}
     addBook(t, auth, p, r);
+    showForm(false);
 }
 // creates card with info of given book object
 function createCard(b) {
@@ -55,7 +56,10 @@ function refreshCards() {
 
 function showForm(show){
     if(show){ document.getElementById('form-wrap').style.display = 'flex'; }
-    else if(!show){ document.getElementById('form-wrap').style.display = 'none'; }
+    else if(!show){
+        document.getElementById('add-form').reset();
+        document.getElementById('form-wrap').style.display = 'none';
+    }
 }
 
 // event listener for adding a new book
