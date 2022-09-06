@@ -29,7 +29,7 @@ function createCard(b) {
     var div = document.createElement('div');
     div.setAttribute('class', 'book-card text-main');
     div.innerHTML = `
-    <p>${b.title}</p>
+    <p>"${b.title}"</p>
     <p>${b.author}</p>
     <p>${b.pageNum}</p>
     <button class='text-main button-main' onclick='changeRead(${b.index}, this)'>${b.read}</button>
