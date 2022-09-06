@@ -24,7 +24,7 @@ function bookSubmit(){
     addBook(t, auth, p, r);
 }
 // creates card with info of given book object
-function createCard(b, remIndex) {
+function createCard(b) {
     var div = document.createElement('div');
     div.setAttribute('class', 'book-card text-main');
     div.innerHTML = `
@@ -32,15 +32,21 @@ function createCard(b, remIndex) {
     <p>${b.author}</p>
     <p>${b.pageNum}</p>
     <button class='text-main button-main'>${b.read}</button>
-    <button class='text-main button-main' onclick='removeCard(${remIndex})'>${remIndex}</button>
+    <button class='text-main button-main' onclick='removeBook(${b.index})'>${b.index}</button>
     `;
     document.getElementById('grid-main').appendChild(div);
 }
-function removeCard(remIndex){
 
+function removeBook(remIndex){
+    myLibrary.splice(remIndex, 1);
+    console.log("Rem", remIndex);
+    for(let i = remIndex; i < myLibrary.length; i++){
+        myLibrary[i].index -= 1;
+    }
+    myLibrary.forEach(b => console.log(b.index));
     refreshCards();
-    console.log(remIndex);
 }
+
 function refreshCards() {
     document.getElementById('grid-main').innerHTML = "";
     myLibrary.forEach(b => createCard(b, b.index)); // create a card for each book in the library
