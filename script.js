@@ -32,24 +32,25 @@ function createCard(b) {
     <p>${b.author}</p>
     <p>${b.pageNum}</p>
     <button class='text-main button-main'>${b.read}</button>
-    <button class='text-main button-main' onclick='removeBook(${b.index})'>${b.index}</button>
+    <button class='text-main button-main' onclick='removeBook(${b.index})'>Remove</button>
     `;
     document.getElementById('grid-main').appendChild(div);
 }
 
 function removeBook(remIndex){
     myLibrary.splice(remIndex, 1);
-    console.log("Rem", remIndex);
-    for(let i = remIndex; i < myLibrary.length; i++){
-        myLibrary[i].index -= 1;
+    for(i = 0; i < myLibrary.length; i++){
+        resetIndex(myLibrary[i], i);
     }
-    myLibrary.forEach(b => console.log(b.index));
     refreshCards();
+}
+function resetIndex(b, i){
+    b.index = i;
 }
 
 function refreshCards() {
     document.getElementById('grid-main').innerHTML = "";
-    myLibrary.forEach(b => createCard(b, b.index)); // create a card for each book in the library
+    myLibrary.forEach(b => createCard(b)); // create a card for each book in the library
 }
 
 function showForm(show){
