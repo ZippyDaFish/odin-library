@@ -32,12 +32,21 @@ function createCard(b) {
     <p>${b.title}</p>
     <p>${b.author}</p>
     <p>${b.pageNum}</p>
-    <button class='text-main button-main'>${b.read}</button>
+    <button class='text-main button-main' onclick='changeRead(${b.index}, this)'>${b.read}</button>
     <button class='text-main button-main' onclick='removeBook(${b.index})'>Remove</button>
     `;
     document.getElementById('grid-main').appendChild(div);
 }
-
+function changeRead(i, val){
+    if(val.innerHTML === "Read"){
+        myLibrary[i].read = "Unread";
+        val.innerHTML = "Unread";
+    }
+    else if(val.innerHTML === "Unread"){
+        myLibrary[i].read = "Read";
+        val.innerHTML = "Read";
+    }
+}
 function removeBook(remIndex){
     myLibrary.splice(remIndex, 1);
     for(i = 0; i < myLibrary.length; i++){
@@ -55,7 +64,9 @@ function refreshCards() {
 }
 
 function showForm(show){
-    if(show){ document.getElementById('form-wrap').style.display = 'flex'; }
+    if(show){
+        document.getElementById('form-wrap').style.display = 'flex'; 
+    }
     else if(!show){
         document.getElementById('add-form').reset();
         document.getElementById('form-wrap').style.display = 'none';
