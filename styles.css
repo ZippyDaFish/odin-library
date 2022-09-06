@@ -87,8 +87,10 @@ body {
     position: absolute;
     top: 80vh;
     border: none;
+    width: 60px;
+    padding: 10px;
     background-color: var(--color-main);
 }
 #close-form:hover {
-    background-color: var(--color-hover);
+    background-color: rgb(230, 63, 63);
 }
